@@ -26,6 +26,16 @@ CONSTRAINT idtaob foreign key (res_id) references Repository(id),
 CONSTRAINT aaaaa PRIMARY KEY (mem_id,res_id)
 ) 
 
+create TABLE Item(
+id_Re int ,
+CONSTRAINT idtaoab foreign key (id_Re) references Repository(id),
+timeCur datetime ,
+state NVARCHAR(10) default "Backlog",
+content NVARCHAR(255),
+CONSTRAINT aaaaabbbb PRIMARY KEY (id_Re,timeCur)
+)
+
+
 
 
 

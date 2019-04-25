@@ -1,51 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Online KanBan Board</title>
+    <link type="text/css" rel="stylesheet" href="../static/css/register.css"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body>
-<div class="container" style="min-height: 500px">
 
-    <div class="starter-template">
-        <h1>Online KanBan Board</h1>
-
-        <form class="form-horizontal" id="login-form">
-            <div class="form-group form-group-lg">
-                <label class="col-sm-2 control-label">Username</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" id="username"/>
-                </div>
-            </div>
-
-            <div class="form-group form-group-lg">
-                <label class="col-sm-2 control-label">Password</label>
-                <div class="col-sm-6">
-                    <input type="password" class="form-control" id="password"/>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-6">
-                    <button type="submit" id="bth-login"
-                            class="btn btn-primary btn-lg">Login
-                    </button>
-
-
-                    <a href="" target="_blank" title="Reister" rel="follow, index">Register</a>
-                </div>
-            </div>
+<div class="col-3"></div>
+<div class="container col-6">
+    <div align="center" >
+        <div class="w3-container w3-blue">
+            <h2>Online KanBan Board</h2>
+        </div>
+        <form style="height:100px; width:500px;" class="w3-container">
+            <p>
+                <label>User name</label>
+                <input  id="username" class="w3-input" type="text"></p>
+            <p>
+                <label>Password</label>
+                <input id="password" class="w3-input" type="password"></p>
+            <button  class="button" type="Login">Login</button>
+            </br>
+            <a href="" >Register</a>
         </form>
-
-        <div id="feedback"></div>
     </div>
 </div>
-
-<script type="text/javascript"
-        src="webjars/jquery/2.2.4/jquery.min.js"></script>
-
-<script type="text/javascript" src="js/ajax_functions.js"></script>
 </body>
 </html>

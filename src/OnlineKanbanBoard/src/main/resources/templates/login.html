@@ -32,27 +32,19 @@
 </html>
 
 <SCRIPT LANGUAGE="JavaScript">
-    var password = document.getElementById("password"),
-        username= document.getElementById("username"),
-        confirm_password = document.getElementById("rppassword");
-
-    function validatePassword(){
-        if(username.value == ""  )
+    function validatePassword() {
+        var password = document.getElementById("password").value,
+            username= document.getElementById("username").value;
+        if (username == ""){
+            alert('Please input user name');
+        }
+        else
+        if (password == "")
         {
-            username.setCustomValidity("Please input username");
+            alert('Please input password');
         }
-        else {
-
-            if (password.value == "")
-            {
-                password.setCustomValidity("Please input password");
-            }
-        }
-
+        return false;
 
     }
-    password.onchange = validatePassword;
-    username.onkeyup = validatePassword;
-
     // End -->
 </script>

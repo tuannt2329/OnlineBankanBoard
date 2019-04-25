@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
 
-@Entity(name = "kanbanonline")
+@Entity(name = "users")
 public class User implements Serializable {
 
     public User() {

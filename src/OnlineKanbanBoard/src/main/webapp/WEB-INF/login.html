@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Online KanBan Board</title>
+</head>
+<body>
+<div class="container" style="min-height: 500px">
+
+    <div class="starter-template">
+        <h1>Online KanBan Board</h1>
+
+        <form class="form-horizontal" id="login-form">
+            <div class="form-group form-group-lg">
+                <label class="col-sm-2 control-label">Username</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="username"/>
+                </div>
+            </div>
+
+            <div class="form-group form-group-lg">
+                <label class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-6">
+                    <input type="password" class="form-control" id="password"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-6">
+                    <button type="submit" id="bth-login"
+                            class="btn btn-primary btn-lg">Login
+                    </button>
+
+
+                    <a href="" target="_blank" title="Reister" rel="follow, index">Register</a>
+                </div>
+            </div>
+        </form>
+
+        <div id="feedback"></div>
+    </div>
+</div>
+
+<script type="text/javascript"
+        src="webjars/jquery/2.2.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="js/ajax_functions.js"></script>
+</body>
+</html>

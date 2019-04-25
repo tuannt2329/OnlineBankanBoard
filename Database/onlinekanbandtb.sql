@@ -1,34 +1,31 @@
-/*
-SQLyog Enterprise - MySQL GUI v6.15
-MySQL - 5.0.82-community-nt : Database - kanbanproj
-*********************************************************************
-*/
-
-/*!40101 SET NAMES utf8 */;
-
-/*!40101 SET SQL_MODE=''*/;
-
-create database if not exists `kanbanproj`;
 
 USE `kanbanproj`;
 
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-
-/*Table structure for table `users` */
-
-DROP TABLE IF EXISTS `users`;
-
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL auto_increment,
+  `id` int NOT NULL auto_increment,
   `username` varchar(255) NOT NULL,
   `pass` varchar(255) NOT NULL,
   PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
-/*Data for the table `users` */
 
-insert  into `users`(`id`,`username`,`pass`) values (1,'minhdtr','12345678');
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+alter table Repository(
+	id int PRIMARY key AUTO_INCREMENT,
+	name NVARCHAR(100),
+	idUserCreate int ,
+	CONSTRAINT idtao foreign key (idUserCreate) references users(id),
+	timeCreate DATETIME 
+)
+
+CREATE TABLE resgroup(
+mem_id int ,
+CONSTRAINT idtaoa foreign key (mem_id) references users(id),
+res_id int ,
+CONSTRAINT idtaob foreign key (res_id) references Repository(id),
+CONSTRAINT aaaaa PRIMARY KEY (mem_id,res_id)
+) 
+
+
+
+

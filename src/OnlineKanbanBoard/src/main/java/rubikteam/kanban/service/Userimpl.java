@@ -28,4 +28,16 @@ private  final UserRepo     userRepo;
     public User save(User user){
         return userRepo.save(user);
     }
+
+
+    public int findUser(String tendangnhap,String pass){
+        for(User employee : userRepo.findAll()){
+            if(employee.getUsername().equals(tendangnhap) && employee.getPass().equals(pass))
+            {
+                return 1;
+            }
+        }
+        return 0;
+    }
+
 }

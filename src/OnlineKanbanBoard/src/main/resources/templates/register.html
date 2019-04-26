@@ -5,19 +5,7 @@
     <title>Register</title>
     <link type="text/css" rel="stylesheet" href="../../webapp/static/css/register.css"/>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <SCRIPT LANGUAGE="JavaScript">
 
-        function check(form) {
-            pw2 = form.rppas;
-
-            if (pw1 != pw2) {
-                alert ("\nYou did not enter the same new password twice. Please re-enter your password.")
-                return false;
-            }
-            else return true;
-        }
-        // End -->
-    </script>
 </head>
 <body>
 
@@ -27,7 +15,7 @@
         <div class="w3-container w3-blue">
             <h2>Register</h2>
         </div>
-        <form style="height:100px; width:500px;" action="/save-user" method="post" class="w3-container">
+        <form style="height:100px; width:500px;" action="/save-user" method="post" class="w3-container" onsubmit="return validateForm()">
             <p>
                 <label>User name</label>
                 <input name="username" id="username" class="w3-input" type="text"></p>
@@ -37,9 +25,41 @@
             <p>
                 <label>Enter the Password</label>
                 <input id="rppassword" class="w3-input" type="password"></p>
-            <button  class="button" type="submit">Submit</button>
+            <button  class="w3-green" type="submit">Submit</button>
         </form>
     </div>
 </div>
 </body>
 </html>
+<SCRIPT LANGUAGE="JavaScript">
+
+
+
+    function validateForm()
+    {
+        var password = document.getElementById("password").value,
+            username= document.getElementById("username").value,
+            confirm_password = document.getElementById("rppassword").value;
+        if (username == ""){
+            alert('Please input user name');
+        }
+        else
+        if (password == "")
+        {
+            alert('Please input password');
+        }
+        else
+        if (password != confirm_password)
+        {
+            alert('no mapping password');
+        }
+        else{
+            return true;
+        }
+        return false;
+    }
+
+
+
+    // End -->
+</script>

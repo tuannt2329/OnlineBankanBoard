@@ -39,7 +39,7 @@ public class LoginController {
     @Autowired
     Userimpl userimpl;
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public ModelAndView login(@ModelAttribute("loginForm") User logins, HttpServletRequest request) {
+    public ModelAndView login(@ModelAttribute User logins, HttpServletRequest request) {
         ModelAndView model = new ModelAndView();
         User login = new User();
         logins.setUsername(request.getParameter("username"));

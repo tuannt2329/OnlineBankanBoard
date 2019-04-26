@@ -14,17 +14,17 @@
         <div class="w3-container w3-blue">
             <h2>Online KanBan Board</h2>
         </div>
-        <form style="height:100px; width:500px;" class="w3-container">
+        <form style="height:100px; width:500px;"  action="/save" method="post" class="w3-container">
             <p>
                 <label>User name</label>
-                <input  id="username" class="w3-input" type="text"></p>
+                <input  id="username" name="username" class="w3-input" type="text"></p>
             <p>
                 <label>Password</label>
-                <input id="password" class="w3-input" type="password"></p>
+                <input id="password" name="password" class="w3-input" type="password"></p>
 
-            <button class="button" type="Login" onclick="validatePassword()">Login</button>
+            <button class="button" type="submit" onclick="validatePassword()">Login</button>
             </br>
-            <a href="" >Register</a>
+            <a href="/" >Register</a>
         </form>
     </div>
 </div>

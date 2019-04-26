@@ -4,9 +4,11 @@ import org.springframework.stereotype.Service;
 import rubikteam.kanban.model.User;
 import rubikteam.kanban.reponsitory.UserRepo;
 
+import java.util.List;
+
 @Service
 public class Userimpl {
-private  final UserRepo     userRepo;
+    private  final UserRepo     userRepo;
 
     public Userimpl(UserRepo userRepo) {
         this.userRepo = userRepo;
@@ -29,7 +31,6 @@ private  final UserRepo     userRepo;
         return userRepo.save(user);
     }
 
-
     public int findUser(String tendangnhap,String pass){
         for(User employee : userRepo.findAll()){
             if(employee.getUsername().equals(tendangnhap) && employee.getPass().equals(pass))
@@ -39,5 +40,7 @@ private  final UserRepo     userRepo;
         }
         return 0;
     }
+
+
 
 }

@@ -6,6 +6,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
 import rubikteam.kanban.model.User;
 import rubikteam.kanban.service.Userimpl;
 
@@ -24,14 +25,14 @@ public class RegisterController {
     }
 
     @PostMapping("/save-user")
-    public String saveBinhLuan(@ModelAttribute User user, BindingResult bindingResult, HttpServletRequest request) {
+    public ModelAndView saveBinhLuan(@ModelAttribute User user, BindingResult bindingResult, HttpServletRequest request) {
         String name = request.getParameter("username");
         if (useriml.findOneUser(name) == 1) {
             user.setPass((String) request.getParameter("password"));
             useriml.save(user);
-            return "success";
+            return new ModelAndView("redirect:/list");
         } else {
-            return "register";
+            return new ModelAndView("redirect:/");
         }
     }
 }

@@ -1,12 +1,10 @@
 package rubikteam.kanban.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity(name = "users")
+@Entity
+@Table(name = "users")
 public class User implements Serializable {
 
     public User() {
@@ -18,7 +16,9 @@ public class User implements Serializable {
     }
 
     @Id
+    @Column(name = "username")
     private  String username;
+
     public String getUsername() {
         return username;
     }
@@ -35,7 +35,10 @@ public class User implements Serializable {
         this.pass = pass;
     }
 
+    @Column(name = "pass")
     private  String pass;
+
+
 
 
 }
